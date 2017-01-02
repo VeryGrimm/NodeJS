@@ -18,8 +18,14 @@
 -process.argv is an array of arguments passed in at the command line.  the first two elements are automaticaly the path to nodejs.exe and the path to the current file.
 -process.argv.indexOf(findMe) will return the index of the element that matches findMe or -1 (standard array functionality)
 -process.stdout is how you access standard out.  ex: process.stdout.write("Hello");
+-process.stdout.clearLine() clears the current line in the console
+-process.stdout.cursorTo() moves the cursor to a point on that line.  ex: process.stdout.cursorTo(0);
 -process.stdin is how you access standard in.  ex: process.stdin.on('data', function() { console.log("event executes when data was entered"); });
 -process.exit() will cause the process to exit
 -process.on('exit', function() { }) will execute the callback function when the process exits.
+
+-setTimeout() will execute a callback function once after a certain delay.  ex: setTimeout(function() { console.log("delay done"); }, delayMillis);
+-setInterval() wlll execute a callback function each time a delay time goes by.  ex: var interval = setInterval(function() {console.log("delay hit"); }, delayMillis);
+-clearInterval().  if interval is assigned as above, then it can be used to end the interval process.  ex: clearInterval(interval);
 
 
