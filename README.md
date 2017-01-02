@@ -8,6 +8,15 @@
 
 -require() is a method that loads and requires modules available with NodeJS.  ex: var path = require("path");
 -path.basename() just returns the filename from a path (if path is assigned as it was in the example above)
+-path.join() would concatenate a path.  ex: path.join(__dirname, 'subdir', 'sub-subdir'); // would create <path>\subdir\sub-subdir
+
+-there is a module called utilities.  ex: var util = require('util');
+-util.log() will log to the console like console.log() does, but it will include a timestamp
+
+-there is a module called v8 that can provide information about memory.  ex: var v8 = require('v8');
+-v8.getHeapStatistics() would return all of our memory usage statistics
+
+-there is a module called readline that allows us to have better control of user input/output. ex: 
 
 -__dirname is a global variable that stores the directory name of the current file
 -__filename is a global variable that stores the full path of the current file
