@@ -8,6 +8,8 @@
 -%s and %j are string replacement and json replacement tokens respectively, and can be used like this: console.log("%s is a real person that says %j", realPerson.name, realPerson.sayings);
 
 -require() is a method that loads and requires modules available with NodeJS.  ex: var path = require("path");
+-require() returns a value set in a module this way: module.exports = Person; // where person in this case is an object constructor specified in the module
+-when requiring a custom module, you have to specify the path
 -a group of core modules are available by default.  others may have to be installed to be accessed.
 -path.basename() just returns the filename from a path (if path is assigned as it was in the example above)
 -path.join() would concatenate a path.  ex: path.join(__dirname, 'subdir', 'sub-subdir'); // would create <path>\subdir\sub-subdir
