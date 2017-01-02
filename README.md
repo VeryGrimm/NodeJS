@@ -27,6 +27,9 @@
 -the emitter can be used to create callback functions that respond to an event: emitter.on('customEvent', function(message, status) { console.log(`${status}: ${message}`); });
 -the emitter can also emit events: emitter.emit('customEvent', "Hello World", 200);
 
+-there is a module called child_process which allows you to execute external processes in your environment.  ex: var exec = require("child_process").exec; // this actually returns the exec method
+-exec() can be executed like this: exec("git version", function(err, stdout) { console.log(stdout); });
+
 -there is a module called readline that allows us to have better control of user input/output. ex: var readline = require('readline');
 -readline.createInterface() can create an interface to control input for the specified input/output streams.  ex: var rl = readline.createInterface(process.stdin, process.stdout);
 -rl.question() is an interface method that will execute a callback function after promping the user.  ex: rl.question("What is the name of a real person? ", function(answer) { console.log(answer); });
