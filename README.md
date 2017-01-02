@@ -1,6 +1,7 @@
 "# NodeJS" 
 
 -js files can be run from the NodeJS command prompt like this: node example.js
+-you can optionally not specify the .js extention
 
 -console() is a method off of the global object.  so, this would work: global.console.log("test");
 
@@ -11,4 +12,8 @@
 -__filename is a global variable that stores the full path of the current file
 
 -template strings are defined by surrounding them with "backtick" symbols (the symbol under tilde on the keyboard).  ex: `Rock on World from ${path.basename(__filename)}`
+
+-the process object is available globally
+-process.argv is an array of arguments passed in at the command line.  the first two elements are automaticaly the path to nodejs.exe and the path to the current file.
+-process.argv.indexOf(findMe) will return the index of the element that matches findMe or -1 (standard array functionality)
 
