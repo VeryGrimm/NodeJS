@@ -14,9 +14,16 @@
 
 -there is a module called utilities.  ex: var util = require('util');
 -util.log() will log to the console like console.log() does, but it will include a timestamp
+-util.inherits() can add an object to the prototype of an existing object: util.inherits(Person, EventEmitter);
 
 -there is a module called v8 that can provide information about memory.  ex: var v8 = require('v8');
 -v8.getHeapStatistics() would return all of our memory usage statistics
+
+-there is a module called events that can emit events that can be reacted to. ex: var events = require('events');
+-to do this, an even emitter must be instatiated: var emitter = new events.EventEmitter();
+-a faster way to instantiate this is: var EventEmitter = require('events').EventEmitter;
+-the emitter can be used to create callback functions that respond to an event: emitter.on('customEvent', function(message, status) { console.log(`${status}: ${message}`); });
+-the emitter can also emit events: emitter.emit('customEvent', "Hello World", 200);
 
 -there is a module called readline that allows us to have better control of user input/output. ex: var readline = require('readline');
 -readline.createInterface() can create an interface to control input for the specified input/output streams.  ex: var rl = readline.createInterface(process.stdin, process.stdout);
