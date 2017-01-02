@@ -5,8 +5,10 @@
 
 -console.log() is one way to debug by sending strings to the console.
 -console is an object off of the global object.  so, this would work: global.console.log("test");
+-%s and %j are string replacement and json replacement tokens respectively, and can be used like this: console.log("%s is a real person that says %j", realPerson.name, realPerson.sayings);
 
 -require() is a method that loads and requires modules available with NodeJS.  ex: var path = require("path");
+-a group of core modules are available by default.  others may have to be installed to be accessed.
 -path.basename() just returns the filename from a path (if path is assigned as it was in the example above)
 -path.join() would concatenate a path.  ex: path.join(__dirname, 'subdir', 'sub-subdir'); // would create <path>\subdir\sub-subdir
 
@@ -16,7 +18,14 @@
 -there is a module called v8 that can provide information about memory.  ex: var v8 = require('v8');
 -v8.getHeapStatistics() would return all of our memory usage statistics
 
--there is a module called readline that allows us to have better control of user input/output. ex: 
+-there is a module called readline that allows us to have better control of user input/output. ex: var readline = require('readline');
+-readline.createInterface() can create an interface to control input for the specified input/output streams.  ex: var rl = readline.createInterface(process.stdin, process.stdout);
+-rl.question() is an interface method that will execute a callback function after promping the user.  ex: rl.question("What is the name of a real person? ", function(answer) { console.log(answer); });
+-rl.setPrompt() is a method to set the prompt string.  ex: rl.setPrompt(`What would ${realPerson.name} say? `);
+-rl.prompt() will prompt the user and wait for user input;
+-rl.on() will fire a callback function when an event happens. the line event fires when the user has entered an input.  ex: rl.on('line', function(saying) { console.log(saying); });
+-rl.close() closes the readline instance
+-another event is close.  this will fire when the readline instance closes.
 
 -__dirname is a global variable that stores the directory name of the current file
 -__filename is a global variable that stores the full path of the current file
