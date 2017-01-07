@@ -29,6 +29,8 @@
 
 -there is a module called child_process which allows you to execute external processes in your environment.  ex: var exec = require("child_process").exec; // this actually returns the exec method
 -exec() can be executed like this: exec("git version", function(err, stdout) { console.log(stdout); });
+-the spawn() method can be returned like exec can, and will execute the first argument, and the second is for subsequent arguments.  in this case, "node alwaysTalking". like this: var cp = spawn("node", ["alwaysTalking"]);
+-when a spawn object closes, it triggers a close event.  this can be handled like this: cp.on("close", function() { //foo });
 
 -there is a module called readline that allows us to have better control of user input/output. ex: var readline = require('readline');
 -readline.createInterface() can create an interface to control input for the specified input/output streams.  ex: var rl = readline.createInterface(process.stdin, process.stdout);
