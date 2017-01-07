@@ -41,6 +41,9 @@
 -rl.close() closes the readline instance
 -another event is close.  this will fire when the readline instance closes.
 
+-there is a module called fs that has various functions to read/manipulate the file system
+-one cool thing is that when you use the asynchronous functions, you pass a callback function to handle them: fs.readdir('./lib', function(err, files) { //foo });
+
 -__dirname is a global variable that stores the directory name of the current file
 -__filename is a global variable that stores the full path of the current file
 
